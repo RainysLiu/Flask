@@ -1,0 +1,9 @@
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% for flashed_msg in get_flashed_messages() %}
+    <msg style="color: red">{{ flashed_msg }}</msg>
+    {% endfor %}
+
+
+
+{{ wtf.quick_form(form,action="/login") }}

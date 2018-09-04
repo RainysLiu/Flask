@@ -1,0 +1,34 @@
+{% extends "bootstrap/base.html" %}
+
+{% block navbar %}
+    <ul class="nav nav-pills">
+  <li role="presentation" class="active"><a href="#">Home</a></li>
+  <li role="presentation"><a href="#">Profile</a></li>
+  <li role="presentation"><a href="#">Messages</a></li>
+    </ul>
+{% endblock %}
+
+{% block content %}
+    <table class="table table-hover">
+        <tr>
+            <th>学号</th>
+            <th>姓名</th>
+            <th>成绩</th>
+        </tr>
+    <tr>
+        <td>1</td>
+        <td>zhangsanfeng</td>
+        <td>85</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>zhangsanfeng2</td>
+        <td>86</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>zhangsanfeng3</td>
+        <td>87</td>
+    </tr>
+    </table>
+{% endblock %}

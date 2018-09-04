@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改学生信息</title>
+    <script type="text/javascript" src="{{ url_for('static',filename='js/jquery-3.1.1.js') }}"></script>
+    <script type="text/javascript">
+   function inputshow() {
+   var selectid=document.getElementById('stu').value;
+        $.ajax({
+                    url: '/getstu/'+selectid,
+                    success: function (data) {
+                    document.getElementById('uname').setAttribute("value", data.name);
+                    document.getElementById('uage').setAttribute("value", data.age);
+                    document.getElementById('score').setAttribute("value", data.score);
+                    },
+                    dataType: 'json',
+                });
+      }
+
+</script>
+
+</head>
+<body>
+<form action="/modstu" method="post" id="myform">
+<h2>修改学生信息:</h2>
+请选择要修改信息的学生：
+    <select id="stu" style="width:100px" name="sel_stu"  onclick="inputshow()" required>
+            {% for s in  students  %}
+    <option value={{ s.id }}>{{ s.id }}  {{ s.name }}</option>
+    {% endfor  %}
+     </select><br>
+<div>
+姓名：<input type="text" name="stuName" id="uname"   required><br>
+年龄：<input type="text" name="stuAge" id="uage"   required><br>
+男：<input type="radio" name="sex" value="男" checked="true"  required>
+女：<input type="radio" name="sex" value="女" required><br>
+成绩：<input type="text" name="score" id="score"   required><br>
+班级：<select id="classes" style="width:100px" name="classes" required>
+    {% for c in  clses  %}
+    <option id="opt" value={{ c.id }}>{{ c.name }}</option>
+    {% endfor  %}
+     </select><br>
+</div>
+    <input type="submit" value="提交"/>
+</form>
+</body>
+</html>

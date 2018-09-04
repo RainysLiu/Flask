@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>显示信息</title>
+</head>
+    <script type="text/javascript" src="{{ url_for('static',filename='js/jquery-3.1.1.js') }}"></script>
+    <script type="text/javascript">
+        function getData() {
+            var info = document.getElementById('input').value;
+            if (info!='') {
+                $.ajax({
+                    url: '/getinfo/' + info,
+                    success: function (data) {
+                        if (data!='none'){
+                            html = ' <table border="1"><thead><tr><th>名称</th><th>价格</th><tr></thead><tbody>';
+                            for(x=0;x<data.length;x++){
+                                html += '<tr><td>'+data[x].name+'</td>';
+                                html += '<td>'+data[x].price+'</td></tr>';
+                            }
+                            html += "</tbody></table>";
+                            $("#mydiv").html(html);
+                            $("#msg").html('');
+                        }
+                        else{
+                            $("#msg").html('查无此信息');
+                        }
+                    },
+                    dataType: 'json'
+                });
+            }
+            else {
+                $("#msg").html('输入为空');
+            }
+        }
+    </script>
+
+<body>
+<msg id="msg" style="color: red">{{ msg }}</msg><br>
+请输入你要查询的商品类：<input type="text" id="input" name="info" id="uname" required><br>
+    <input type="button" value="异步获取数据" onclick="getData()"/>
+
+<div id="mydiv">
+
+</div>
+</body>
+</html>

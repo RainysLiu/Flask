@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择</title>
+</head>
+<body>
+<h3>请欣赏图片和视频：</h3>
+<img src="{{ url_for('static',filename='imges/13.gif') }}"/><br>
+<video width="320" height="240" controls autoplay>
+  <source src="{{ url_for('static',filename='videos/movie.ogg') }}" type="video/ogg">
+</video>
+
+</body>
+</html>

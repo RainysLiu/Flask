@@ -1,0 +1,7 @@
+{% macro mymacro(poples) %}
+    <ul>
+       {% for thing in poples %}
+           <li> {{ thing }}:{{ poples[thing] }} </li>
+       {% endfor %}
+    </ul>
+{% endmacro %}

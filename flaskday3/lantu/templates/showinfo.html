@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>按输入获取信息</title>
+</head>
+<body>
+     {% if name=="countrys" %}
+         <h3>所有的国家信息如下：</h3><hr>
+            {% for country in countrys%}
+                {{ country }}<br>
+             {% endfor %}
+     {% elif name=='clours' %}
+          <h3>所有的颜色信息如下：</h3><hr>
+            {% for clour in clours%}
+                {{ clour }}<br>
+             {% endfor %}
+     {% else %}
+         <h3>抱歉，无此信息!</h3><br>
+     {% endif %}
+</body>
+</html>
+
+
+
+
+
