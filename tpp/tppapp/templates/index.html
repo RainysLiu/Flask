@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+{% for city in citys %}
+    {{ city.id  }}&nbsp;&nbsp;  {{ city.regionName }}&nbsp;&nbsp; {{ city.cityCode }}&nbsp;&nbsp; {{ city.pinYin}} <br>
+{% endfor %}
+</body>
+</html>
+
+

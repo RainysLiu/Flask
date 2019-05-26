@@ -1,0 +1,32 @@
+{
+    "status": 200,
+    "message": "success",
+    "data": {
+        "year": 2018,
+        "month": 9,
+        "day": 6,
+        "lunarYear": 2018,
+        "lunarMonth": 7,
+        "lunarDay": 27,
+        "cnyear": "贰零壹捌 ",
+        "cnmonth": "七",
+        "cnday": "廿七",
+        "hyear": "戊戌",
+        "cyclicalYear": "戊戌",
+        "cyclicalMonth": "庚申",
+        "cyclicalDay": "辛丑",
+        "suit": "捕捉,结网,入殓,破土,安葬",
+        "taboo": "嫁娶,入宅",
+        "animal": "狗",
+        "week": "Thursday",
+        "festivalList": [],
+        "jieqi": {
+            "8": "白露",
+            "23": "秋分"
+        },
+        "maxDayInMonth": 30,
+        "leap": false,
+        "lunarYearString": "戊戌",
+        "bigMonth": true
+    }
+}
